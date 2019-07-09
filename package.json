@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-starter",
+  "version": "0.0.1",
+  "description": "simple nodejs skeleton",
+  "main": "src/",
+  "repository": "https://github.com/chriskalmar/nodejs-starter",
+  "author": "Chris Kalmar <christian.kalmar@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "mkdir dist; babel src -d dist --source-maps --verbose",
+    "build-watch": "mkdir dist; babel src -w -d dist --source-maps --verbose",
+    "start-prod": "NODE_ENV=production node -r ./loadEnv.js dist/",
+    "dev": "nodemon -w . --exec babel-node -r loadEnv.js src/"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.2",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0"
+  }
+}
